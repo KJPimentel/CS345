@@ -112,29 +112,15 @@ int P1_shellTask(int argc, char* argv[])
 				myArgv[i] = 0;
 
 			// parse input string
-			int j = 0;
-			while (sp[j]){
-				if (sp[j] == '"')
-				{
-					(sp = strchr(sp, '"'));
-
-						*sp++ = 0;
-						myArgv[newArgc++] = sp;
-				}
-				else {
-					while (sp[j] != ' ' && sp[j] != '"'){
-						sp[j] = tolower(sp[j]);
-						j++;
-						sp = strchr(sp, ' ');
-							*sp++ = 0;
-							myArgv[newArgc++] = sp;
-					}
-				}
+			while ((sp = strchr(sp, ' ')))
+			{
+				*sp++ = 0;
+				myArgv[newArgc++] = sp;
+				myArgv = realloc(myArgv, sizeof(char)*sizeof(*sp));
 			}
-
-
-
+			newArgv = malloc(sizeof(myArgv));
 			newArgv = myArgv;
+			free(myArgv);
 		}	// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 		// look for command
@@ -153,6 +139,7 @@ int P1_shellTask(int argc, char* argv[])
 		if (!found)	printf("\nInvalid command!");
 
 		// ?? free up any malloc'd argv parameters
+		free(newArgv);
 		for (i=0; i<INBUF_SIZE; i++) inBuffer[i] = 0;
 	}
 	return 0;						// terminate task

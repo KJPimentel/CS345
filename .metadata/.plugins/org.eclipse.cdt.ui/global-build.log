@@ -1,0 +1,612 @@
+13:49:06 **** Incremental Build of configuration Release for project Project1 ****
+make all 
+Building file: ../os345.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345.d" -MT"os345.d" -o "os345.o" "../os345.c"
+../os345.c: In function ‘main’:
+../os345.c:129:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if ( resetCode = initOS()) return resetCode;
+  ^
+In file included from ../os345.c:29:0:
+../os345.c: In function ‘initOS’:
+../os345config.h:31:24: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+ #define INIT_OS  system("stty -echo -icanon");fcntl(1,F_SETFL,O_NONBLOCK);
+                        ^
+../os345.c:340:2: note: in expansion of macro ‘INIT_OS’
+  INIT_OS
+  ^
+../os345.c: In function ‘powerDown’:
+../os345config.h:35:26: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+ #define RESTORE_OS system("stty icanon echo"); // enable canonical mode and echo
+                          ^
+../os345.c:408:2: note: in expansion of macro ‘RESTORE_OS’
+  RESTORE_OS
+  ^
+Finished building: ../os345.c
+ 
+Building file: ../os345fat.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345fat.d" -MT"os345fat.d" -o "os345fat.o" "../os345fat.c"
+Finished building: ../os345fat.c
+ 
+Building file: ../os345interrupts.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345interrupts.d" -MT"os345interrupts.d" -o "os345interrupts.o" "../os345interrupts.c"
+Finished building: ../os345interrupts.c
+ 
+Building file: ../os345lc3.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345lc3.d" -MT"os345lc3.d" -o "os345lc3.o" "../os345lc3.c"
+../os345lc3.c: In function ‘loadLC3Program’:
+../os345lc3.c:497:12: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
+      fscanf(infile, "%x", &address);
+            ^
+Finished building: ../os345lc3.c
+ 
+Building file: ../os345mmu.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345mmu.d" -MT"os345mmu.d" -o "os345mmu.o" "../os345mmu.c"
+../os345mmu.c: In function ‘getMemAdr’:
+../os345mmu.c:82:16: warning: unused variable ‘uptFrame’ [-Wunused-variable]
+  int rptFrame, uptFrame;
+                ^
+../os345mmu.c:82:6: warning: unused variable ‘rptFrame’ [-Wunused-variable]
+  int rptFrame, uptFrame;
+      ^
+../os345mmu.c:81:19: warning: unused variable ‘upte2’ [-Wunused-variable]
+  int upta, upte1, upte2;
+                   ^
+../os345mmu.c:81:12: warning: unused variable ‘upte1’ [-Wunused-variable]
+  int upta, upte1, upte2;
+            ^
+../os345mmu.c:81:6: warning: unused variable ‘upta’ [-Wunused-variable]
+  int upta, upte1, upte2;
+      ^
+../os345mmu.c:80:19: warning: unused variable ‘rpte2’ [-Wunused-variable]
+  int rpta, rpte1, rpte2;
+                   ^
+../os345mmu.c:80:12: warning: unused variable ‘rpte1’ [-Wunused-variable]
+  int rpta, rpte1, rpte2;
+            ^
+../os345mmu.c:80:6: warning: unused variable ‘rpta’ [-Wunused-variable]
+  int rpta, rpte1, rpte2;
+      ^
+../os345mmu.c:79:21: warning: unused variable ‘pa’ [-Wunused-variable]
+  unsigned short int pa;
+                     ^
+../os345mmu.c: In function ‘accessPage’:
+../os345mmu.c:195:11: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    return (int)(&swapMemory[pnum<<6]);
+           ^
+../os345mmu.c: In function ‘getFrame’:
+../os345mmu.c:150:12: warning: ‘data’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   if (data & fmask)
+            ^
+../os345mmu.c:138:9: note: ‘data’ was declared here
+  int i, data;
+         ^
+../os345mmu.c: In function ‘setFrameTableBits’:
+../os345mmu.c:127:36: warning: ‘data’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   if ( (i >= sf) && (i < ef)) data = data | fmask;
+                                    ^
+../os345mmu.c: In function ‘getAvailableFrame’:
+../os345mmu.c:150:12: warning: ‘data’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   if (data & fmask)
+            ^
+Finished building: ../os345mmu.c
+ 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building file: ../os345p2.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p2.d" -MT"os345p2.d" -o "os345p2.o" "../os345p2.c"
+Finished building: ../os345p2.c
+ 
+Building file: ../os345p3.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p3.d" -MT"os345p3.d" -o "os345p3.o" "../os345p3.c"
+Finished building: ../os345p3.c
+ 
+Building file: ../os345p4.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p4.d" -MT"os345p4.d" -o "os345p4.o" "../os345p4.c"
+../os345p4.c: In function ‘P4_vmaccess’:
+../os345p4.c:123:2: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘long int’ [-Wformat=]
+  printf(" = %04x", getMemAdr(adr, 1)-&MEMWORD(0));
+  ^
+../os345p4.c: In function ‘displayUPT’:
+../os345p4.c:329:41: warning: unused variable ‘upte2’ [-Wunused-variable]
+    unsigned short int rpte, upt, upte1, upte2, uptba;
+                                         ^
+../os345p4.c:329:34: warning: unused variable ‘upte1’ [-Wunused-variable]
+    unsigned short int rpte, upt, upte1, upte2, uptba;
+                                  ^
+../os345p4.c: In function ‘displayPage’:
+../os345p4.c:452:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+    buffer = (short int*)accessPage(pn, pn, 3);
+             ^
+Finished building: ../os345p4.c
+ 
+Building file: ../os345p5.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p5.d" -MT"os345p5.d" -o "os345p5.o" "../os345p5.c"
+../os345p5.c: In function ‘groupReportTask’:
+../os345p5.c:202:4: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
+    printf("%10ld (%d%%)", group_count[i], (group_count[i] * 100) / sum);
+    ^
+Finished building: ../os345p5.c
+ 
+Building file: ../os345p6.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p6.d" -MT"os345p6.d" -o "os345p6.o" "../os345p6.c"
+../os345p6.c: In function ‘P6_project6’:
+../os345p6.c:91:2: warning: braces around scalar initializer [enabled by default]
+  char* newArgv[] = { {"finalTest"}, {"All"} };
+  ^
+../os345p6.c:91:2: warning: (near initialization for ‘newArgv[0]’) [enabled by default]
+../os345p6.c:91:2: warning: braces around scalar initializer [enabled by default]
+../os345p6.c:91:2: warning: (near initialization for ‘newArgv[1]’) [enabled by default]
+../os345p6.c: In function ‘P6_dfat’:
+../os345p6.c:220:4: warning: pointer targets in passing argument 1 of ‘printFatEntries’ differ in signedness [-Wpointer-sign]
+    printFatEntries("FAT1", start, end);
+    ^
+In file included from ../os345p6.c:26:0:
+../os345fat.h:158:6: note: expected ‘unsigned char *’ but argument is of type ‘char *’
+ void printFatEntries(unsigned char*, int, int);
+      ^
+../os345p6.c:242:18: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+    char* FATtb = (INTEGER(argv[1]) == 2) ? FAT2 : FAT1;
+                  ^
+../os345p6.c:242:10: warning: unused variable ‘FATtb’ [-Wunused-variable]
+    char* FATtb = (INTEGER(argv[1]) == 2) ? FAT2 : FAT1;
+          ^
+../os345p6.c:252:18: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+    char* FATtb = (INTEGER(argv[1]) == 2) ? FAT2 : FAT1;
+                  ^
+../os345p6.c:252:10: warning: unused variable ‘FATtb’ [-Wunused-variable]
+    char* FATtb = (INTEGER(argv[1]) == 2) ? FAT2 : FAT1;
+          ^
+../os345p6.c: In function ‘P6_mount’:
+../os345p6.c:303:2: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘uint32’ [-Wformat=]
+  printf("\n        FAT-32 sectors: %ld", bootSector.BPB_HiddSec);  // Hidden sectors (0 for non-partitioned media)
+  ^
+../os345p6.c: In function ‘P6_type’:
+../os345p6.c:393:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if (error = fmsCloseFile(FDs)) fmsError(error);
+  ^
+../os345p6.c: In function ‘checkDirectory’:
+../os345p6.c:928:5: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 4 has type ‘long unsigned int’ [-Wformat=]
+     printf("\n  File size of %u in file \"%s\" exceeds %u", dirEntry.fileSize, fileName, maxSize);
+     ^
+../os345p6.c: In function ‘fmsTests’:
+../os345p6.c:1058:5: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘size_t’ [-Wformat=]
+     if (debug) printf("\n   fmsWriteFile(tFID[%d], \"%s\", %d)", i, text[i], strlen(text[i]));
+     ^
+../os345p6.c: In function ‘P6_open’:
+../os345p6.c:1355:6: warning: unused variable ‘error’ [-Wunused-variable]
+  int error, mode;
+      ^
+../os345p6.c: In function ‘P6_seek’:
+../os345p6.c:1458:13: warning: unused variable ‘fileID’ [-Wunused-variable]
+  int error, fileID, seekIndex;
+             ^
+../os345p6.c: In function ‘isValidFileName’:
+../os345p6.c:1598:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if (s = strchr(fileName, '.'))
+  ^
+../os345p6.c: In function ‘fmsMask’:
+../os345p6.c:1617:7: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+    if (!strcmp(mask, ".."))
+       ^
+../os345p6.c: In function ‘fmsGetNextDirEntry’:
+../os345p6.c:1708:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   if (error = fmsReadSector(buffer, dirSector)) return error;
+   ^
+../os345p6.c:1719:4: warning: pointer targets in passing argument 2 of ‘fmsMask’ differ in signedness [-Wpointer-sign]
+    else if (fmsMask(mask, dirEntry->name, dirEntry->extension)) return 0;   // return if valid
+    ^
+../os345p6.c:1613:5: note: expected ‘char *’ but argument is of type ‘uint8 *’
+ int fmsMask(char* mask, char* name, char* ext)
+     ^
+../os345p6.c:1719:4: warning: pointer targets in passing argument 3 of ‘fmsMask’ differ in signedness [-Wpointer-sign]
+    else if (fmsMask(mask, dirEntry->name, dirEntry->extension)) return 0;   // return if valid
+    ^
+../os345p6.c:1613:5: note: expected ‘char *’ but argument is of type ‘uint8 *’
+ int fmsMask(char* mask, char* name, char* ext)
+     ^
+../os345p6.c: In function ‘fmsMount’:
+../os345p6.c:1819:12: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+       fread(ramDisk, sizeof(char), SECTORS_PER_DISK * BYTES_PER_SECTOR, fp);
+            ^
+../os345p6.c: In function ‘P6_fileSlots’:
+../os345p6.c:595:50: warning: iteration 8u invokes undefined behavior [-Waggressive-loop-optimizations]
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+                                                  ^
+../os345p6.c:595:3: note: containing loop
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+   ^
+../os345p6.c: In function ‘P6_read’:
+../os345p6.c:595:50: warning: iteration 8u invokes undefined behavior [-Waggressive-loop-optimizations]
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+                                                  ^
+../os345p6.c:595:3: note: containing loop
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+   ^
+../os345p6.c: In function ‘P6_write’:
+../os345p6.c:595:50: warning: iteration 8u invokes undefined behavior [-Waggressive-loop-optimizations]
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+                                                  ^
+../os345p6.c:595:3: note: containing loop
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+   ^
+../os345p6.c: In function ‘P6_seek’:
+../os345p6.c:595:50: warning: iteration 8u invokes undefined behavior [-Waggressive-loop-optimizations]
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+                                                  ^
+../os345p6.c:595:3: note: containing loop
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+   ^
+../os345p6.c: In function ‘P6_close’:
+../os345p6.c:595:50: warning: iteration 8u invokes undefined behavior [-Waggressive-loop-optimizations]
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+                                                  ^
+../os345p6.c:595:3: note: containing loop
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+   ^
+../os345p6.c: In function ‘P6_finalTest’:
+../os345p6.c:595:50: warning: iteration 8u invokes undefined behavior [-Waggressive-loop-optimizations]
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+                                                  ^
+../os345p6.c:595:3: note: containing loop
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+   ^
+../os345p6.c: In function ‘P6_project6’:
+../os345p6.c:595:50: warning: iteration 8u invokes undefined behavior [-Waggressive-loop-optimizations]
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+                                                  ^
+../os345p6.c:595:3: note: containing loop
+   for (i=0; i<12; i++) printf("%c", fdEntry->name[i]);
+   ^
+Finished building: ../os345p6.c
+ 
+Building file: ../os345park.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345park.d" -MT"os345park.d" -o "os345park.o" "../os345park.c"
+../os345park.c: In function ‘drawPark’:
+../os345park.c:509:5: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     pk[cp[j][0]][cp[j][1]+0] = 'o';         SWAP;
+     ^
+../os345park.c:510:5: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     pk[cp[j][0]][cp[j][1]+1] = 'A'+i;        SWAP;
+     ^
+../os345park.c:511:5: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     pk[cp[j][0]][cp[j][1]+2] = 'o';         SWAP;
+     ^
+../os345park.c:517:5: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     pk[cp[j][0]+0][cp[j][1]] = 'o';         SWAP;
+     ^
+../os345park.c:524:6: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+      pk[cp[j][0]+1][cp[j][1]] = '0'+park->cars[i].passengers; SWAP;
+      ^
+../os345park.c:526:5: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     else pk[cp[j][0]+1][cp[j][1]] = 'A'+i;       SWAP;
+     ^
+../os345park.c:528:5: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     pk[cp[j][0]+2][cp[j][1]] = 'o';         SWAP;
+     ^
+Finished building: ../os345park.c
+ 
+Building file: ../os345semaphores.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345semaphores.d" -MT"os345semaphores.d" -o "os345semaphores.o" "../os345semaphores.c"
+../os345semaphores.c: In function ‘createSemaphore’:
+../os345semaphores.c:182:14: warning: variable ‘semLink’ set but not used [-Wunused-but-set-variable]
+  Semaphore** semLink = &semaphoreList;
+              ^
+Finished building: ../os345semaphores.c
+ 
+Building file: ../os345signals.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345signals.d" -MT"os345signals.d" -o "os345signals.o" "../os345signals.c"
+Finished building: ../os345signals.c
+ 
+Building file: ../os345tasks.c
+Invoking: GCC C Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345tasks.d" -MT"os345tasks.d" -o "os345tasks.o" "../os345tasks.c"
+../os345tasks.c: In function ‘sysKillTask’:
+../os345tasks.c:162:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  while(sem = *semLink)
+  ^
+Finished building: ../os345tasks.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+13:49:26 **** Incremental Build of configuration Release for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+13:50:27 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+14:11:04 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+14:38:29 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+14:40:44 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+14:49:28 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+14:49:42 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+14:50:43 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+14:51:25 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+14:54:17 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+14:59:20 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+14:59:38 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+14:59:54 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+15:04:17 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:119:5: warning: passing argument 1 of ‘realloc’ makes pointer from integer without a cast [enabled by default]
+     newArgv = realloc(sizeof(*sp));
+     ^
+In file included from ../os345p1.c:19:0:
+/usr/include/stdlib.h:480:14: note: expected ‘void *’ but argument is of type ‘long unsigned int’
+ extern void *realloc (void *__ptr, size_t __size)
+              ^
+../os345p1.c:119:5: error: too few arguments to function ‘realloc’
+     newArgv = realloc(sizeof(*sp));
+     ^
+make: *** [os345p1.o] Error 1
+15:18:51 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:110:26: error: invalid application of ‘sizeof’ to incomplete type ‘char[]’
+    myArgv = malloc(sizeof(inBuffer));
+                          ^
+make: *** [os345p1.o] Error 1
+15:20:49 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:122:8: warning: attempt to free a non-heap object ‘myArgv’ [-Wfree-nonheap-object]
+    free(myArgv);
+        ^
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+15:21:03 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+15:29:48 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:119:12: error: incompatible types when assigning to type ‘char *[50]’ from type ‘void *’
+     myArgv = realloc(myArgv, sizeof(char)*sizeof(*sp));
+            ^
+make: *** [os345p1.o] Error 1
+16:59:06 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:59:21 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+17:00:56 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+17:18:01 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:128:6: error: invalid operands to binary * (have ‘char *’ and ‘char *’)
+      *sp++ = 0;
+      ^
+make: *** [os345p1.o] Error 1
+17:20:16 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+17:22:20 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:127:50: error: expected statement before ‘)’ token
+      while ((sp = strchr(sp, ' ')) && *sp != '"'))
+                                                  ^
+make: *** [os345p1.o] Error 1
+17:30:43 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+17:32:39 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+17:33:25 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+17:34:58 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 

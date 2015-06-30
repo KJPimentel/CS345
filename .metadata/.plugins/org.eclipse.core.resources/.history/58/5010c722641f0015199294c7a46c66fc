@@ -102,7 +102,6 @@ int P1_shellTask(int argc, char* argv[])
 			// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 			// ?? parse command line into argc, argv[] variables
 			// ?? must use malloc for argv storage!
-
 			static char *sp, *myArgv[MAX_ARGS];
 
 			// init arguments
@@ -112,28 +111,11 @@ int P1_shellTask(int argc, char* argv[])
 				myArgv[i] = 0;
 
 			// parse input string
-			int j = 0;
-			while (sp[j]){
-				if (sp[j] == '"')
-				{
-					(sp = strchr(sp, '"'));
-
-						*sp++ = 0;
-						myArgv[newArgc++] = sp;
-				}
-				else {
-					while (sp[j] != ' ' && sp[j] != '"'){
-						sp[j] = tolower(sp[j]);
-						j++;
-						sp = strchr(sp, ' ');
-							*sp++ = 0;
-							myArgv[newArgc++] = sp;
-					}
-				}
+			while ((sp = strchr(sp, ' ')))
+			{
+				*sp++ = 0;
+				myArgv[newArgc++] = sp;
 			}
-
-
-
 			newArgv = myArgv;
 		}	// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

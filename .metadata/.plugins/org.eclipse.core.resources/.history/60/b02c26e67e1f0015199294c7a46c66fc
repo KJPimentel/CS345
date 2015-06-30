@@ -116,19 +116,19 @@ int P1_shellTask(int argc, char* argv[])
 			while (sp[j]){
 				if (sp[j] == '"')
 				{
-					(sp = strchr(sp, '"'));
-
+					while ((sp = strchr(sp, '"')))
+					{
 						*sp++ = 0;
 						myArgv[newArgc++] = sp;
+					}
 				}
 				else {
-					while (sp[j] != ' ' && sp[j] != '"'){
-						sp[j] = tolower(sp[j]);
-						j++;
-						sp = strchr(sp, ' ');
+					sp[j] = tolower(sp[j]);
+					while ((sp = strchr(sp, ' ')) && *sp != '"'))
+						{
 							*sp++ = 0;
 							myArgv[newArgc++] = sp;
-					}
+						}
 				}
 			}
 

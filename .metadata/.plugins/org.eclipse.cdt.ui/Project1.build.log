@@ -1,0 +1,15 @@
+17:34:58 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+
+17:34:58 Build Finished (took 208ms)
+
