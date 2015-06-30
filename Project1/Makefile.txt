@@ -1,0 +1,156 @@
+# Wedit Makefile for project op345f2014
+SRCDIR="c:\users\proper\dropbox\byu\cs 345\public_html\labs\os345"
+CFLAGS=-I"c:\lcc\include"  -g2 
+CC=$(LCCROOT)\bin\lcc.exe
+LINKER=$(LCCROOT)\bin\lcclnk.exe
+OBJS=\
+	os345tasks.obj \
+	os345signals.obj \
+	os345semaphores.obj \
+	os345park.obj \
+	os345p6.obj \
+	os345p5.obj \
+	os345p4.obj \
+	os345p3.obj \
+	os345p2.obj \
+	os345p1.obj \
+	os345mmu.obj \
+	os345lc3.obj \
+	os345interrupts.obj \
+	os345fat.obj \
+	os345.obj
+
+LIBS=
+EXE=c:\lcc\projects\os345f2014.exe
+
+$(EXE):	$(OBJS) Makefile
+	$(LINKER)  -subsystem console -o c:\lcc\projects\os345f2014.exe $(OBJS) $(LIBS)
+
+# Build os345tasks.c
+OS345TASKS_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345signals.h\
+
+os345tasks.obj: $(OS345TASKS_C) $(SRCDIR)\"os345tasks.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345tasks.c"
+
+# Build os345signals.c
+OS345SIGNALS_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345signals.h\
+
+os345signals.obj: $(OS345SIGNALS_C) $(SRCDIR)\"os345signals.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345signals.c"
+
+# Build os345semaphores.c
+OS345SEMAPHORES_C=\
+	$(SRCDIR)\os345.h\
+
+os345semaphores.obj: $(OS345SEMAPHORES_C) $(SRCDIR)\"os345semaphores.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345semaphores.c"
+
+# Build os345park.c
+OS345PARK_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345park.h\
+
+os345park.obj: $(OS345PARK_C) $(SRCDIR)\"os345park.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345park.c"
+
+# Build os345p6.c
+OS345P6_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345fat.h\
+
+os345p6.obj: $(OS345P6_C) $(SRCDIR)\"os345p6.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345p6.c"
+
+# Build os345p5.c
+OS345P5_C=\
+	$(SRCDIR)\os345.h\
+
+os345p5.obj: $(OS345P5_C) $(SRCDIR)\"os345p5.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345p5.c"
+
+# Build os345p4.c
+OS345P4_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345lc3.h\
+
+os345p4.obj: $(OS345P4_C) $(SRCDIR)\"os345p4.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345p4.c"
+
+# Build os345p3.c
+OS345P3_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345park.h\
+
+os345p3.obj: $(OS345P3_C) $(SRCDIR)\"os345p3.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345p3.c"
+
+# Build os345p2.c
+OS345P2_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345signals.h\
+
+os345p2.obj: $(OS345P2_C) $(SRCDIR)\"os345p2.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345p2.c"
+
+# Build os345p1.c
+OS345P1_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345signals.h\
+
+os345p1.obj: $(OS345P1_C) $(SRCDIR)\"os345p1.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345p1.c"
+
+# Build os345mmu.c
+OS345MMU_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345lc3.h\
+
+os345mmu.obj: $(OS345MMU_C) $(SRCDIR)\"os345mmu.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345mmu.c"
+
+# Build os345lc3.c
+OS345LC3_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345lc3.h\
+	$(SRCDIR)\os345fat.h\
+
+os345lc3.obj: $(OS345LC3_C) $(SRCDIR)\"os345lc3.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345lc3.c"
+
+# Build os345interrupts.c
+OS345INTERRUPTS_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345config.h\
+	$(SRCDIR)\os345signals.h\
+
+os345interrupts.obj: $(OS345INTERRUPTS_C) $(SRCDIR)\"os345interrupts.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345interrupts.c"
+
+# Build os345fat.c
+OS345FAT_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345fat.h\
+
+os345fat.obj: $(OS345FAT_C) $(SRCDIR)\"os345fat.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345fat.c"
+
+# Build os345.c
+OS345_C=\
+	$(SRCDIR)\os345.h\
+	$(SRCDIR)\os345signals.h\
+	$(SRCDIR)\os345config.h\
+	$(SRCDIR)\os345lc3.h\
+	$(SRCDIR)\os345fat.h\
+
+os345.obj: $(OS345_C) $(SRCDIR)\"os345.c"
+	$(CC) -c $(CFLAGS) $(SRCDIR)\"os345.c"
+
+link:
+	$(LINKER)  -subsystem console -o c:\lcc\projects\os345f2014.exe $(OBJS) $(LIBS)
+
+clean:
+	del $(OBJS) os345f2014.exe
