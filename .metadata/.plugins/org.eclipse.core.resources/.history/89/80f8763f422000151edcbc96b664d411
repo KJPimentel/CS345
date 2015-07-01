@@ -109,6 +109,7 @@ int P1_shellTask(int argc, char* argv[])
 			newArgc = 1;
 			myArgv[0] = sp = inBuffer;				// point to input string
 			for (i=1; i<MAX_ARGS; i++){
+				myArgv[i] = malloc(sizeof(char *));
 				myArgv[i] = 0;
 			}
 			// parse input string
@@ -121,24 +122,8 @@ int P1_shellTask(int argc, char* argv[])
 
 
 			newArgv = malloc(newArgc * sizeof(char *));
-			for (i = 0; i < newArgc; i++){
-				newArgv[i] = myArgv[i];
-			}
 
-			for (i = 0; i < MAX_ARGS; i++){
-				if (newArgv[newArgc-1][i] == '&'){
-					int address;
-					for (found = i = 0; i < NUM_COMMANDS; i++)
-							{
-								if (!strcmp(newArgv[0], commands[i]->command) ||
-									 !strcmp(newArgv[0], commands[i]->shortcut))
-								{
-									// command found
-									address = (*commands[i]->func);
-								}
-							}
-					createTask(newArgv[0], address, newArgc, newArgv);
-			}
+			newArgv = myArgv;
 		}	// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 		// look for command

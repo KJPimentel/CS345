@@ -178,7 +178,6 @@ int sysKillTask(int taskId)
 
 	// ?? delete task from system queues
 
-	free (tcb[taskId].argv);
 	tcb[taskId].name = 0;			// release tcb slot
 	return 0;
 } // end sysKillTask

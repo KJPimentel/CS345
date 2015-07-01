@@ -610,3 +610,272 @@ Invoking: GCC C Linker
 gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
 Finished building target: Project1
  
+15:58:18 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:136:4: error: ‘for’ loop initial declarations are only allowed in C99 mode
+    for (int i = 0; i < MAX_ARGS; i++){
+    ^
+../os345p1.c:136:4: note: use option -std=c99 or -std=gnu99 to compile your code
+../os345p1.c:159:3: error: ‘for’ loop initial declarations are only allowed in C99 mode
+   for (int i = 0; i < MAX_ARGS; i++){
+   ^
+../os345p1.c:160:4: warning: statement with no effect [-Wunused-value]
+    free newArgv[i];
+    ^
+../os345p1.c:160:9: error: expected ‘;’ before ‘newArgv’
+    free newArgv[i];
+         ^
+make: *** [os345p1.o] Error 1
+15:59:41 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:00:36 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:00:45 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:01:07 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:01:27 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:02:52 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:112:11: error: incompatible types when assigning to type ‘char *[50]’ from type ‘void *’
+    myArgv = malloc(sizeof(char *));
+           ^
+make: *** [os345p1.o] Error 1
+16:03:10 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:112:11: error: incompatible types when assigning to type ‘char *[50]’ from type ‘void *’
+    myArgv = malloc(sizeof(char **));
+           ^
+make: *** [os345p1.o] Error 1
+16:07:13 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:107:11: error: incompatible types when assigning to type ‘char *[50]’ from type ‘void *’
+    myArgv = malloc(sizeof(char *));
+           ^
+make: *** [os345p1.o] Error 1
+16:08:30 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:107:11: error: incompatible types when assigning to type ‘char *[50]’ from type ‘void *’
+    myArgv = malloc(MAX_ARGS * sizeof(char *));
+           ^
+make: *** [os345p1.o] Error 1
+16:16:15 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:16:52 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+../os345p1.c: In function ‘P1_shellTask’:
+../os345p1.c:126:27: error: expected ‘;’ before ‘)’ token
+     newArgv[i] = malloc(4));
+                           ^
+../os345p1.c:126:27: error: expected statement before ‘)’ token
+make: *** [os345p1.o] Error 1
+16:17:02 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:17:17 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:18:57 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:19:08 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:20:16 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:20:37 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:22:53 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:22:57 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:28:38 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:28:49 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:29:31 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:30:24 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:32:39 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:32:51 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+make: Nothing to be done for `all'.
+16:33:18 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:34:14 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:39:26 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 
+16:41:02 **** Incremental Build of configuration Debug for project Project1 ****
+make all 
+Building file: ../os345p1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"os345p1.d" -MT"os345p1.d" -o "os345p1.o" "../os345p1.c"
+Finished building: ../os345p1.c
+ 
+Building target: Project1
+Invoking: GCC C Linker
+gcc  -o "Project1"  ./os345.o ./os345fat.o ./os345interrupts.o ./os345lc3.o ./os345mmu.o ./os345p1.o ./os345p2.o ./os345p3.o ./os345p4.o ./os345p5.o ./os345p6.o ./os345park.o ./os345semaphores.o ./os345signals.o ./os345tasks.o   
+Finished building target: Project1
+ 

@@ -125,20 +125,6 @@ int P1_shellTask(int argc, char* argv[])
 				newArgv[i] = myArgv[i];
 			}
 
-			for (i = 0; i < MAX_ARGS; i++){
-				if (newArgv[newArgc-1][i] == '&'){
-					int address;
-					for (found = i = 0; i < NUM_COMMANDS; i++)
-							{
-								if (!strcmp(newArgv[0], commands[i]->command) ||
-									 !strcmp(newArgv[0], commands[i]->shortcut))
-								{
-									// command found
-									address = (*commands[i]->func);
-								}
-							}
-					createTask(newArgv[0], address, newArgc, newArgv);
-			}
 		}	// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 		// look for command

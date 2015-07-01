@@ -104,41 +104,39 @@ int P1_shellTask(int argc, char* argv[])
 			// ?? must use malloc for argv storage!
 
 			static char *sp, *myArgv[MAX_ARGS];
-			// init arguments
 
+			// init arguments
 			newArgc = 1;
 			myArgv[0] = sp = inBuffer;				// point to input string
-			for (i=1; i<MAX_ARGS; i++){
+			for (i=1; i<MAX_ARGS; i++)
 				myArgv[i] = 0;
-			}
+
 			// parse input string
-			while ((sp = strchr(sp, ' ')))
-						{
+			int j = 0;
+			while (sp[j]){
+				if (sp[j] == '"')
+				{
+					(sp = strchr(sp, '"'));
+
+						*sp++ = 0;
+						myArgv[newArgc++] = sp;
+				}
+				else {
+					while (sp[j] != ' ' && sp[j] != '"'){
+						sp[j] = tolower(sp[j]);
+						j++;
+						sp = strchr(sp, ' ');
 							*sp++ = 0;
 							myArgv[newArgc++] = sp;
-						}
-
-
-
-			newArgv = malloc(newArgc * sizeof(char *));
-			for (i = 0; i < newArgc; i++){
-				newArgv[i] = myArgv[i];
+					}
+				}
 			}
 
-			for (i = 0; i < MAX_ARGS; i++){
-				if (newArgv[newArgc-1][i] == '&'){
-					int address;
-					for (found = i = 0; i < NUM_COMMANDS; i++)
-							{
-								if (!strcmp(newArgv[0], commands[i]->command) ||
-									 !strcmp(newArgv[0], commands[i]->shortcut))
-								{
-									// command found
-									address = (*commands[i]->func);
-								}
-							}
-					createTask(newArgv[0], address, newArgc, newArgv);
+
+			for (int i = 0; i < MAX_ARGS; i++){
+				newArgv[i] = malloc(sizeof(char *));
 			}
+			newArgv = myArgv;
 		}	// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 		// look for command
@@ -158,7 +156,9 @@ int P1_shellTask(int argc, char* argv[])
 
 		// ?? free up any malloc'd argv parameters
 		for (i=0; i<INBUF_SIZE; i++) inBuffer[i] = 0;
-		free (newArgv);
+		for (int i = 0; i < MAX_ARGS; i++){
+			free newArgv[i];
+		}
 	}
 	return 0;						// terminate task
 } // end P1_shellTask
