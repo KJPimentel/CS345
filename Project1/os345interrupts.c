@@ -115,6 +115,20 @@ static void keyboard_isr()
 				break;
 			}
 
+			case 0x17: 						// ^w
+			{
+				sigSignal(-1, mySIGTSTP);
+				break;
+			}
+
+			case 0x12:						// ^r
+			{
+				sigSignal (-1, mySIGCONT);
+
+				break;
+			}
+
+
 			default:
 			{
 				inBuffer[inBufIndx++] = inChar;

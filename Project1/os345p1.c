@@ -31,8 +31,8 @@
 extern jmp_buf reset_context;
 // -----
 
-
-#define NUM_COMMANDS 49
+#define NUM_MY_COMMANDS 1
+#define NUM_COMMANDS (49 + NUM_MY_COMMANDS)
 typedef struct								// command struct
 {
 	char* command;
@@ -59,6 +59,11 @@ Command* newCommand(char*, char*, int (*func)(int, char**), char*);
 
 void mySigIntHandler()
 {
+	int taskId;
+		for (taskId=1; taskId<MAX_TASKS; taskId++)
+		{
+			sigSignal(taskId, mySIGTERM);
+		}
 	printf("Hellomynameisinigomontoyayoukilledmyfatherpreparetodie");
 }
 
@@ -103,62 +108,113 @@ int P1_shellTask(int argc, char* argv[])
 			// ?? parse command line into argc, argv[] variables
 			// ?? must use malloc for argv storage!
 
-			static char *sp, *myArgv[MAX_ARGS];
+			static char *sp, *q, *myArgv[MAX_ARGS];
 			// init arguments
 
 			newArgc = 1;
-			myArgv[0] = sp = inBuffer;				// point to input string
+			myArgv[0] = sp = q = inBuffer;				// point to input string
 			for (i=1; i<MAX_ARGS; i++){
 				myArgv[i] = 0;
 			}
 			// parse input string
-			while ((sp = strchr(sp, ' ')))
-						{
-							*sp++ = 0;
-							myArgv[newArgc++] = sp;
-						}
+
+			char *word, *it;
+
+			sp = strchr(sp,' ');
+			q = strchr(q, '"');
+
+
+			while (sp != NULL)
+			{
+				int oldspot = 0;
+				if (sp < q)
+				{
+					word = malloc((sp-oldspot) * sizeof(char));
+					for (i = 0; it < sp; i++)
+						word[i] = tolower(inBuffer[it]);
+					oldspot = sp - inBuffer;
+					it++;
+					sp = strchr(sp+1, ' ');
+					myArgv[newArgc++] = word;
+					free(word);
+				}
+				else
+				{
+					word = malloc((q-oldspot) * sizeof(char));
+					for (i = 0; it < q; i++)
+					{
+						word[i] = tolower(inBuffer[it]);
+
+					}
+				}
+			}
+
+
+			/*q = strchr(q, '"');
+				while ((sp = strchr(sp, ' ')))
+				{
+					if (q == NULL || sp < q)
+					{
+						*sp++ = 0;
+						myArgv[newArgc++] = sp;
+					}
+					else
+					{
+						*q++ = 0;
+						myArgv[newArgc++] = q;
+						q = strchr(q, '"');
+						*q++ = 0;
+						//myArgv[newArgc++] = q;
+						sp = q;
+						q = strchr(q, '"');
+					}
+				}
+*/
 
 
 
-			newArgv = malloc(newArgc * sizeof(char *));
+			newArgv = malloc((newArgc+1) * sizeof(char *));
 			for (i = 0; i < newArgc; i++){
 				newArgv[i] = myArgv[i];
 			}
+			newArgv[newArgc] = NULL;
 
 			for (i = 0; i < MAX_ARGS; i++){
 				if (newArgv[newArgc-1][i] == '&'){
+					newArgv[newArgc-1][i] = NULL;
 					int address;
 					for (found = i = 0; i < NUM_COMMANDS; i++)
-							{
-								if (!strcmp(newArgv[0], commands[i]->command) ||
-									 !strcmp(newArgv[0], commands[i]->shortcut))
-								{
-									// command found
-									address = (*commands[i]->func);
-								}
-							}
-					createTask(newArgv[0], address, newArgc, newArgv);
-			}
-		}	// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+					{
+						if (!strcmp(newArgv[0], commands[i]->command) ||
+								!strcmp(newArgv[0], commands[i]->shortcut))
+						{
+							// command found
+							address = (*commands[i]->func);
+						}
+					}
+					createTask(newArgv[0], address, 5, newArgc, newArgv);
+				}
+			}	// ?? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-		// look for command
-		for (found = i = 0; i < NUM_COMMANDS; i++)
-		{
-			if (!strcmp(newArgv[0], commands[i]->command) ||
-				 !strcmp(newArgv[0], commands[i]->shortcut))
+			// look for command
+			for (found = i = 0; i < NUM_COMMANDS; i++)
 			{
-				// command found
-				int retValue = (*commands[i]->func)(newArgc, newArgv);
-				if (retValue) printf("\nCommand Error %d", retValue);
-				found = TRUE;
-				break;
+				if (!strcmp(newArgv[0], commands[i]->command) ||
+						!strcmp(newArgv[0], commands[i]->shortcut))
+				{
+					// command found
+					int retValue = (*commands[i]->func)(newArgc, newArgv);
+					if (retValue) printf("\nCommand Error %d", retValue);
+					found = TRUE;
+					break;
+				}
 			}
-		}
-		if (!found)	printf("\nInvalid command!");
+			if (!found)	printf("\nInvalid command!");
 
-		// ?? free up any malloc'd argv parameters
-		for (i=0; i<INBUF_SIZE; i++) inBuffer[i] = 0;
-		free (newArgv);
+			// ?? free up any malloc'd argv parameters
+			for (i=0; i<INBUF_SIZE; i++) inBuffer[i] = 0;
+			free (newArgv);
+		}
 	}
 	return 0;						// terminate task
 } // end P1_shellTask
@@ -176,7 +232,50 @@ int P1_project1(int argc, char* argv[])
 } // end P1_project1
 
 
+// *************************
+// Add Command
 
+int P1_add(int argc, char* argv[])
+{
+	int i;
+	int currentsum = 0;
+	int base = 10;
+
+
+	for (i = 1; i < argc; i++)
+	{
+		char* number = argv[i];
+		char first = argv[i][0];
+		switch (first)
+		{
+		case 'd':
+			base = 10;
+			number++;
+			break;
+		case 'x':
+			base = 16;
+			number++;
+			break;
+		case 'o':
+			base = 8;
+			number++;
+			break;
+		default:
+			if (isdigit(first) || first == NULL)
+				base = 10;
+			else
+			{
+				printf("\nInvalid type. Assuming decimal.\n");
+				base = 10;
+			}
+		}
+
+
+		currentsum += strtol(number, NULL, base);
+	}
+	printf ("\nSum is %d", currentsum);
+	return 0;
+}
 // ***********************************************************************
 // ***********************************************************************
 // quit command
@@ -274,6 +373,8 @@ Command** P1_init()
 	commands[i++] = newCommand("project1", "p1", P1_project1, "P1: Shell");
 	commands[i++] = newCommand("help", "he", P1_help, "OS345 Help");
 	commands[i++] = newCommand("lc3", "lc3", P1_lc3, "Execute LC3 program");
+	// Extra P1 Commands
+	commands[i++] = newCommand("add", "+", P1_add, "Adds numbers");
 
 	// P2: Tasking
 	commands[i++] = newCommand("project2", "p2", P2_project2, "P2: Tasking");
@@ -304,8 +405,8 @@ Command** P1_init()
 
 	// P5: Scheduling
 	commands[i++] = newCommand("project5", "p5", P5_project5, "P5: Scheduling");
-//	commands[i++] = newCommand("stress1", "t1", P5_stress1, "ATM stress test1");
-//	commands[i++] = newCommand("stress2", "t2", P5_stress2, "ATM stress test2");
+	//	commands[i++] = newCommand("stress1", "t1", P5_stress1, "ATM stress test1");
+	//	commands[i++] = newCommand("stress2", "t2", P5_stress2, "ATM stress test2");
 
 	// P6: FAT
 	commands[i++] = newCommand("project6", "p6", P6_project6, "P6: FAT");
@@ -337,4 +438,5 @@ Command** P1_init()
 
 	return commands;
 
-} // end P1_init
+
+}// end P1_init
